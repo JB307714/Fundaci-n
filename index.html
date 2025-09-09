@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundación Socorristas A.P.S Uruguay</title>
+    <meta name="description" content="Fundación Socorristas A.P.S Uruguay - Capacitación y formación profesional en emergencias, rescate y primeros auxilios.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Variables CSS para la paleta de colores */
+        :root {
+            --primary-blue: #003366;
+            --accent-red: #B22222;
+            --light-gray: #F5F5F5;
+            --white: #FFFFFF;
+            --text-dark: #333333;
+            --text-light: #666666;
+        }
+
+        /* Reset y configuración base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header y navegación fija */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo-space {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+            /* Espacio reservado para el logo */
+            width: 200px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-red);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-red);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Botón móvil */
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            cursor: pointer;
+        }
+
+        /* Sección Hero */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(178, 34, 34, 0.6)), 
+                        url('img/IMAGEN\ DEL\ HERO.jpeg') no-repeat center center/cover;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            margin-left: 20px;
+            margin-right: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-red);
+            color: var(--white);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: #8B0000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(178, 34, 34, 0.4);
+        }
+
+        /* Secciones generales */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-red);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-alt {
+            background: var(--light-gray);
+        }
+
+        /* Sección Presentación */
+        .presentation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .presentation-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .presentation-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .presentation-image {
+            text-align: center;
+        }
+
+        .placeholder-image {
+            width: 100%;
+            height: 300px;
+            background: var(--light-gray);
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        /* Historia */
+        .history-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .history-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, var(--accent-red) 0%, var(--accent-red) 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.2em;
+            background-position: 0 88%;
+            padding: 0 4px;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        /* Objetivos */
+        .objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .objective-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--accent-red);
+        }
+
+        .objective-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .objective-card i {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .objective-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        /* Programas */
+        .programs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .program {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .program:hover {
+            transform: translateY(-5px);
+        }
+
+        .program-header {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .program-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .program-content {
+            padding: 2rem;
+        }
+
+        .program-list {
+            list-style: none;
+        }
+
+        .program-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--light-gray);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .program-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-red);
+            font-weight: bold;
+        }
+
+        /* Equipo */
+        .team {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-member {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-photo {
+            width: 120px;
+            height: 120px;
+            background: var(--light-gray);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 1rem;
+            overflow: hidden;
+            border: 3px solid var(--primary-blue);
+            
+        }
+
+        .team-member h4 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Contacto */
+        .contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item i {
+            color: var(--accent-red);
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            width: 20px;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--primary-blue);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--light-gray);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: var(--accent-red);
+            color: var(--white);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #8B0000;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .footer-section a {
+            color: var(--white);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-red);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            
+            width: 40px;
+            height: 40px;
+            
+            color: var(--white);
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Sección de Video */
+.video-section {
+    background: var(--light-gray);
+}
+
+.video-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.video-container p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporción 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    background: var(--light-gray);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px;
+}
+
+/* Sección Redes Sociales */
+.social-community {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #004080 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.social-community .section-title {
+    color: var(--white);
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.social-community .section-title::after {
+    background: var(--accent-red);
+}
+
+.community-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 4rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.social-icons-large {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.social-icon-large {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--white);
+    transition: all 0.3s ease;
+    padding: 2rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-icon-large:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon-large i {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-icon-large h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.social-icon-large p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    text-align: center;
+    max-width: 150px;
+}
+
+/* Colores específicos para cada red social */
+.social-youtube:hover {
+    background: rgba(255, 0, 0, 0.2);
+}
+
+.social-youtube:hover i {
+    color: #FF0000;
+}
+
+.social-instagram:hover {
+    background: rgba(225, 48, 108, 0.2);
+}
+
+.social-instagram:hover i {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.social-facebook:hover {
+    background: rgba(24, 119, 242, 0.2);
+}
+
+.social-facebook:hover i {
+    color: #1877F2;
+}
+
+/* Galería de Fotos */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 51, 102, 0.9));
+    color: var(--white);
+    padding: 2rem 1.5rem 1.5rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-overlay h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.gallery-overlay p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Responsive para galería */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+    
+    .gallery-item img {
+        height: 200px;
+    }
+}
+
+/* Responsive para redes sociales */
+@media (max-width: 768px) {
+    .social-icons-large {
+        gap: 2rem;
+    }
+    
+    .social-icon-large {
+        padding: 1.5rem;
+        min-width: 140px;
+    }
+    
+    .social-icon-large i {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .social-community .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .community-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-icons-large {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+}
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #004080;
+            color: #B0C4DE;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu {
+        display: block;
+        padding: 0.5rem;     /* espacio interno al botón */
+        margin-right: 10px;  /* lo separa del borde derecho */
+    }
+
+    .nav-menu {
+        display: none; /* oculto por defecto */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+        /* ajustes de espaciado */
+        padding: 1rem 1.5rem;
+        gap: 1rem; /* espacio entre enlaces */
+    }
+
+    /* cuando se abre (con .active) */
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu a {
+        padding: 0.5rem 0; /* más área clickeable */
+    }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .presentation {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .logo-space {
+                width: 150px;
+                height: 50px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Animaciones suaves */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Scroll suave */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Ajuste para el header fijo */
+        body {
+            padding-top: 90px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header con navegación fija -->
+    <header class="header">
+        <nav class="nav container">
+            <!-- Espacio reservado para el logo -->
+            <div class="logo-space">
+                <img src="img/LOGO FUNDACION INTERNACIONAL.png" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#historia">Nuestra Historia</a></li>
+                <li><a href="#objetivos">Objetivos</a></li>
+                <li><a href="#programas">Programas</a></li>
+                <li><a href="#equipo">Equipo</a></li>
+                <li><a href="#video">Videos</a></li>
+                <li><a href="#redes">Redes</a></li>
+                <li><a href="#Galeria">Galeria</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            
+            <button class="mobile-menu" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Sección Hero -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Fundación Socorristas A.P.S Uruguay</h1>
+            <p>Capacitación y formación profesional en emergencias, rescate y primeros auxilios</p>
+            <a href="#contacto" class="cta-button">Contáctanos</a>
+        </div>
+    </section>
+
+    <!-- Sección Presentación / Quiénes Somos -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Quiénes Somos</h2>
+            <div class="presentation">
+                <div class="presentation-text">
+                    <h3><span class="highlight">Nuestra Compromiso</span></h3>
+                    <p>Somos una organización dedicada a la capacitación y formación profesional en emergencias, rescate y primeros auxilios. Nuestro objetivo es brindar herramientas y conocimientos esenciales para salvar vidas y mejorar la respuesta ante situaciones de emergencia.</p>
+                    <p>Contamos con un equipo de instructores altamente capacitados y con experiencia en el campo de la salud y la seguridad. Ofrecemos una variedad de cursos y programas adaptados a las necesidades de diferentes públicos, desde la comunidad en general hasta profesionales del sector salud y seguridad.</p>
+                    <p>Nuestra misión es promover una cultura de prevención y preparación, capacitando a individuos y organizaciones para que puedan actuar de manera efectiva en situaciones críticas. Creemos que la educación y la formación son clave para salvar vidas y construir comunidades más seguras.</p>
+                    
+                </div>
+                <div class="presentation-image">
+                    <div class="placeholder-image">
+                        <img src="img/Quienes somos foto.jpeg" alt="" style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestra Historia <span class="highlight">Lic. Manuel Díaz en 2019</span> -->
+    <section id="historia" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Nuestra Historia</h2>
+            <div class="history-content">
+                <p>La asociación fue <span class="highlight">creada por el Lic. Manuel Díaz en 2019</span> , a partir de la necesidad de dar herramientas a
+                    la comunidad sobre Primeros Auxilios Domésticos y
+                    Rcp-Básico, fue así como comenzamos a dictar
+                    cursos en escuelas, universidades, centros
+                    comunitarios, jardines, y donde se nos convocara.</p>
+                <p>Hoy en día la asociación cuenta
+                    con más de 15 instructores formados a nivel
+                    nacional e internacional en la sede de Argentina,
+                    más los instructores en Uruguay Chile y Colombia.
+                    Posee su propio programa de formación de
+                    instructores con más de 100 horas cátedras,
+                    también se creó el programa intercambio
+                    internacional de formación profesional,
+                    que nos permite constantemente estar <span class="highlight">actualizados
+                    en los últimos protocolos y
+                    procedimientos a nivel mundial</span>,
+                    hoy en día hay más de 500 instructores a nivel
+                    mundial de las diferentes áreas de rescate y
+                    emergencias.</p>
+                <p>En el 2022 logramos pasar de asociación civil a ONG
+                    Fundación, para poder crecer a nivel internacional,
+                    para la homologación de la misma en otros paises, y
+                    para ampliar nuestros proyectos.</p>
+                <p>Actualmente la Fundación Socorristas A.P.S Uruguay
+                    cuenta con un manual de primeros auxilios y prevencion de lesiones <span class="highlight">avalado por el SINAE (Sistema Nacional de emergencias)</span> y por la <span class="highlight">Presidencia de la Republica Oriental del Uruguay.</span></p>
+                    <p>Se realizan en la actualidad capacitaciones homologadas por el Ministerio del Interior para el personal activo.</p>
+                    
+                    
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Objetivos y Misión -->
+    <section id="objetivos" class="section">
+        <div class="container">
+            <h2 class="section-title">Objetivos y Misión</h2>
+            <div class="objectives">
+                <div class="objective-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Reanimación Cardiopulmonar</h3>
+                    <p>Capacitación especializada en técnicas de RCP para profesionales y la comunidad en general. Manejo del D.E.A (Desfribilador externo automatico)</p>
+                </div>
+                <div class="objective-card">
+                    <i class="fas fa-first-aid"></i>
+                    <h3>Primeros Auxilios</h3>
+                    <p>Formación integral en primeros auxilios para actuar efectivamente ante urgencias y emergencias en el ambito Pre-Hospitalario y domestico.</p>
+                </div>
+                <div class="objective-card">
+                    <i class="fas fa-life-ring"></i>
+                    <h3>Rescate y Emergencias</h3>
+                    <p>Entrenamiento avanzado en técnicas de rescate y manejo de situaciones de emergencia en zonas agrestes, montañosas y zonas colapsadas.</p>
+                </div>
+                <div class="objective-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Prevención y Preparación</h3>
+                    <p>Desarrollo de capacitaciones para la comunidad en prevencion de situaciones de alto riesgo en la vida cotidiana.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Programas y Áreas de Capacitación -->
+    <section id="programas" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Programas de Capacitación</h2>
+            <div class="programs">
+                <div class="program">
+                    <div class="program-header">
+                        <h3><i class="fas fa-users"></i> Capacitación Comunitaria</h3>
+                        <p>Formación para la comunidad en general</p>
+                    </div>
+                    <div class="program-content">
+                        <ul class="program-list">
+                            <li>RCP básico y avanzado</li>
+                            <li>Primeros auxilios básicos</li>
+                            <li>Socorrista juvenil</li>
+                            <li>Jornadas de RCP</li>
+                            <li>Talleres de prevención</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="program">
+                    <div class="program-header">
+                        <h3><i class="fas fa-user-md"></i> Capacitación Profesional</h3>
+                        <p>Formación especializada para profesionales</p>
+                    </div>
+                    <div class="program-content">
+                        <ul class="program-list">
+                            <li>RCP avanzado certificado</li>
+                            <li>Trauma básico y avanzado</li>
+                            <li>Rescate en aguas abiertas</li>
+                            <li>Emergencias tácticas</li>
+                            <li>Psicología en emergencias</li>
+                            <li>Diplomaturas especializadas</li>
+                            <li>Talleres técnicos avanzados</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipo -->
+    <section id="equipo" class="section">
+        <div class="container">
+            <h2 class="section-title">Nuestro Equipo</h2>
+            <div class="team">
+                <div class="team-member">
+                   <!-- Lugar para las fotos -->
+                      <!--<div class="team-photo"><img src="img/Equipo/Carlos Lafuente.jpeg" alt="" style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px;"></div>-->
+                    <h4>Lic. Manuel Díaz</h4>
+                    <p>Presidente y Director General</p>
+                </div>
+                <div class="team-member">
+                    
+                    <h4>Enf. Pablo Liberti</h4>
+                    <p>Coordinador de Capacitación</p>
+                </div>
+                <div class="team-member">
+                    
+                    <h4>Lic. Julio Guerrero</h4>
+                    <p>Coordinador de Entrenamiento</p>
+                </div>
+                <div class="team-member">
+                    
+                    <h4>Camila Díaz Silva</h4>
+                    <p>Tesorera e Instructora</p>
+                </div>
+                <div class="team-member">
+                    
+                    <h4>Lic. Lourdes Ribeiro</h4>
+                    <p>Instructora Especializada</p>
+                </div>
+                <div class="team-member">
+                    
+                    <h4>Enf. Andrea Núñez</h4>
+                    <p>Instructora de Emergencias</p>
+                </div>
+                <div class="team-member">
+                    
+                    <h4>Enf. Flavia Ozuna</h4>
+                    <p>Especialista en RCP</p>  
+                </div>
+                <div class="team-member">
+                    
+                    <h4>Carlos Lapuente</h4>
+                    <p>Instructor</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Sección de Video -->
+    <section id="video" class="section video-section">
+        <div class="container">
+            <h2 class="section-title">Conoce Nuestro Trabajo</h2>
+            <div class="video-container">
+                <p>Descubre cómo la Fundación Socorristas A.P.S Internacional está formando profesionales en emergencias y salvando vidas a través de la capacitación especializada.</p>
+                <div class="video-wrapper">
+                    <!-- CAMBIA ESTE ENLACE por tu video de YouTube -->
+                    <iframe src="https://www.youtube.com/embed/9uFqJ71tULI" 
+                            title="Video Fundación Socorristas" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sumate a la Comunidad -->
+<section id="redes" class="social-community">
+    <div class="container">
+        <h2 class="section-title">Sumate a la Comunidad</h2>
+        <p class="community-subtitle">Conectá con nosotros y mantente al día con las últimas novedades, cursos y eventos de la Fundación</p>
+        
+        <div class="social-icons-large">
+            
+            <a href="https://www.youtube.com/@FundaciónsocorristasAPSInterna" target="_blank" class="social-icon-large social-youtube">
+                <i class="fab fa-youtube"></i>
+                <h4>YouTube</h4>
+                <p>Videos educativos y demostraciones</p>
+            </a>
+
+            <a href="https://www.instagram.com/fundacion.socorristas_a.p.s.uy?utm_source=ig_web_button_share_sheet&igsh=MXF5MGY4cmZiM2NpMg==" target="_blank" class="social-icon-large social-instagram">
+                <i class="fab fa-instagram"></i>
+                <h4>Instagram</h4>
+                <p>Contenido diario y behind the scenes</p>
+            </a>
+
+            <a href="https://www.facebook.com/apsocorristas?locale=es_LA" target="_blank" class="social-icon-large social-facebook">
+                <i class="fab fa-facebook-f"></i>
+                <h4>Facebook</h4>
+                <p>Eventos y actualizaciones</p>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<!-- Galería de Fotos -->
+<section id="Galeria" class="section section-alt">
+    <div class="container">
+        <h2 class="section-title">Galería</h2>
+        <div class="gallery-grid">
+            
+            <div class="gallery-item">
+                <!-- CAMBIAR por tu imagen -->
+                <img src="Galeria/WhatsApp Image 2025-09-08 at 20.30.11.jpeg" alt="Rescate">
+                <div class="gallery-overlay">
+                    <h4>Rescate</h4>
+                    <p>Entrenamiento profesional de rescate en condiciones de maximo riesgo.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <!-- CAMBIAR por tu imagen -->
+                <img src="Galeria/RCP CENTRO EDUCATIVO.jpeg" alt="RCP EN CENTROS EDUCATIVOS">
+                <div class="gallery-overlay">
+                    <h4>Enseñanza de RCP</h4>
+                    <p>Técnicas especializadas en centros educativos.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <!-- CAMBIAR por tu imagen -->
+                <img src="Galeria/Rescate en Agua.jpeg" alt="Rescate en aguas abiertas">
+                <div class="gallery-overlay">
+                    <h4>Rescate en aguas abiertas.</h4>
+                    <p>Formacion ante rescates en aguas abiertas.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <!-- CAMBIAR por tu imagen -->
+                <img src="Galeria/STOP THE BLEED.jpeg" alt="Programa stop the bleed">
+                <div class="gallery-overlay">
+                    <h4>Programa Stop the Bleed</h4>
+                    <p>Programa Stop the Bleed del colegio Americano de Cirujanos</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <!-- CAMBIAR por tu imagen -->
+                <img src="Galeria/Captura de pantalla 2025-09-08 a la(s) 8.53.12 p. m..png" alt="Trauma Avanzado">
+                <div class="gallery-overlay">
+                    <h4>Trauma Avanzado</h4>
+                    <p>Entrenamiento especializado en manejo de traumas</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <!-- CAMBIAR por tu imagen -->
+                <img src="Galeria/Medicina Tactica.jpeg" alt="Medicina Tactica">
+                <div class="gallery-overlay">
+                    <h4>Medicina Tactica</h4>
+                    <p>Curso de medicina tactica a nivel 1 y 2</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact">
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Teléfonos:</strong><br>
+                            +598 97 135 908 (Uruguay)<br>                            
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Correos electrónicos:</strong><br>
+                            sec.capacitacion@apsocorristas.org<br>
+                            a.p.socorristas.uy@gmail.com
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-share-alt"></i>
+                        <div>
+                            <strong>Síguenos en redes sociales:</strong>
+                            <div class="social-links" style="margin-top: 10px;">
+                                <a href="https://www.facebook.com/apsocorristas?locale=es_LA" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com/fundacion.socorristas_a.p.s.uy?utm_source=ig_web_button_share_sheet&igsh=MXF5MGY4cmZiM2NpMg==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.youtube.com/@FundaciónsocorristasAPSInterna" target="_blank" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contact-form">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1.5rem;">Envíanos un mensaje</h3>
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono (opcional)</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos cómo podemos ayudarte..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar por WhatsApp</button>
+                </form>
+            </div>
+            
+        </div>
+    </section>
+    
+
+    <script>
+    // Funcionalidad del menú móvil
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navMenu = document.getElementById('nav-menu');
+
+    mobileMenu.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        const icon = mobileMenu.querySelector('i');
+        if (navMenu.classList.contains('active')) {
+            icon.className = 'fas fa-times';
+        } else {
+            icon.className = 'fas fa-bars';
+        }
+    });
+
+    // Cerrar menú móvil al hacer click en un enlace
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            mobileMenu.querySelector('i').className = 'fas fa-bars';
+        });
+    });
+
+    // Funcionalidad del formulario de contacto - envío por WhatsApp
+    const contactForm = document.getElementById('contact-form');
+    
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevenir el envío normal del formulario
+        
+        // Obtener los valores del formulario
+        const nombre = document.getElementById('nombre').value;
+        const email = document.getElementById('email').value;
+        const telefono = document.getElementById('telefono').value;
+        const mensaje = document.getElementById('mensaje').value;
+        
+        // Crear el mensaje para WhatsApp
+        let whatsappMessage = `*Contacto desde la web - Fundación Socorristas A.P.S*\n\n`;
+        whatsappMessage += `*Nombre:* ${nombre}\n`;
+        whatsappMessage += `*Email:* ${email}\n`;
+        
+        if (telefono) {
+            whatsappMessage += `*Teléfono:* ${telefono}\n`;
+        }
+        
+        whatsappMessage += `*Mensaje:*\n${mensaje}\n\n`;
+        whatsappMessage += `_Mensaje enviado desde: ${window.location.href}_`;
+        
+        // Codificar el mensaje para URL
+        const encodedMessage = encodeURIComponent(whatsappMessage);
+        
+        // Número de WhatsApp (formato internacional sin + y sin espacios)
+        const whatsappNumber = '59897135908';
+        
+        // Crear la URL de WhatsApp
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+        
+        // Abrir WhatsApp en una nueva pestaña
+        window.open(whatsappURL, '_blank');
+        
+        // Opcional: Limpiar el formulario después del envío
+        contactForm.reset();
+        
+        // Mostrar mensaje de confirmación
+        alert('¡Gracias por contactarnos! Te estamos redirigiendo a WhatsApp para completar tu mensaje.');
+    });
+
+    // Animaciones de scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    // Observar elementos para animaciones
+    document.querySelectorAll('.objective-card, .program, .team-member').forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
+    });
+</script>
+</body>
