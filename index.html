@@ -1204,9 +1204,9 @@
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <strong>Correos electrónicos:</strong><br>
-                            sec.capacitacion@apsocorristas.org<br>
-                            a.p.socorristas.uy@gmail.com
+                            <strong>Correos electrónico:</strong><br>
+                            
+                            <button type="submit" class="submit-btn" onclick="copiarTexto(this)">contacto@fundacionapssocorristas.org</button>
                         </div>
                     </div>
 
@@ -1250,6 +1250,7 @@
     
 
     <script>
+
     // Funcionalidad del menú móvil
     const mobileMenu = document.getElementById('mobile-menu');
     const navMenu = document.getElementById('nav-menu');
@@ -1334,5 +1335,17 @@
         el.classList.add('fade-in');
         observer.observe(el);
     });
+
+    // Copiar Mail del boton al portapapeles
+      
+    function copiarTexto(boton) {
+      let texto = boton.innerText; // el contenido del botón
+      navigator.clipboard.writeText(texto).then(() => {
+        alert("Copiado: " + texto);
+      }).catch(err => {
+        console.error("Error al copiar: ", err);
+      });
+    }
+  
 </script>
 </body>
