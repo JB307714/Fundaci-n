@@ -854,6 +854,403 @@
         body {
             padding-top: 90px;
         }
+
+        /* ========================================
+   ESTILOS PARA SECCIÓN DE NOVEDADES
+   Agregar estos estilos a tu archivo style.css
+   ======================================== */
+
+/* Contenedor principal */
+.news-section {
+    padding: 60px 20px;
+    background-color: #F5F5F5;
+}
+
+.news-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    color: #003366;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #B22222;
+}
+
+/* Grid de novedades */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* Tarjeta de novedad */
+.news-item {
+    background: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.news-item-header {
+    padding: 20px;
+    background: linear-gradient(135deg, #003366, #004080);
+}
+
+.news-item h3 {
+    color: #FFFFFF;
+    margin: 0 0 10px 0;
+    font-size: 1.4rem;
+}
+
+.news-date {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.news-content {
+    padding: 20px;
+    color: #333333;
+    line-height: 1.6;
+}
+
+.news-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 15px 0;
+    display: block;
+}
+
+.news-content p {
+    margin-bottom: 15px;
+}
+
+/* Mensaje cuando no hay novedades */
+.no-news-message {
+    text-align: center;
+    padding: 40px;
+    color: #666666;
+}
+
+/* ========================================
+   PANEL DE ADMINISTRACIÓN
+   ======================================== */
+
+.admin-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.admin-container {
+    background: #FFFFFF;
+    max-width: 900px;
+    margin: 40px auto;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #F5F5F5;
+}
+
+.admin-header h2 {
+    color: #003366;
+    margin: 0;
+}
+
+/* Formulario */
+.news-form {
+    margin-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #003366;
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #003366;
+}
+
+/* Editor toolbar */
+.editor-toolbar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.toolbar-btn {
+    background: #F5F5F5;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.toolbar-btn:hover {
+    background: #003366;
+    color: #FFFFFF;
+    border-color: #003366;
+}
+
+/* Botones */
+.btn-primary, .btn-secondary, .btn-logout {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: #003366;
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background: #002244;
+}
+
+.btn-secondary {
+    background: #666666;
+    color: #FFFFFF;
+    margin-left: 10px;
+}
+
+.btn-secondary:hover {
+    background: #555555;
+}
+
+.btn-logout {
+    background: #B22222;
+    color: #FFFFFF;
+}
+
+.btn-logout:hover {
+    background: #8B0000;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+/* Lista de novedades en admin */
+.existing-news {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid #F5F5F5;
+}
+
+.existing-news h3 {
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.admin-news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.admin-news-item {
+    background: #F5F5F5;
+    padding: 15px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-news-info h4 {
+    color: #003366;
+    margin: 0 0 5px 0;
+}
+
+.admin-news-info span {
+    color: #666666;
+    font-size: 0.9rem;
+}
+
+.btn-delete {
+    background: #B22222;
+    color: #FFFFFF;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-delete:hover {
+    background: #8B0000;
+}
+
+/* ========================================
+   MODAL DE LOGIN
+   ======================================== */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #FFFFFF;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    color: #B22222;
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(178, 34, 34, 0.1);
+    border-radius: 4px;
+}
+
+/* ========================================
+   BOTÓN FLOTANTE DE ADMIN
+   ======================================== */
+
+.admin-float-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #003366;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    z-index: 999;
+}
+
+.admin-float-btn:hover {
+    background: #B22222;
+    transform: scale(1.1);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-container {
+        margin: 20px;
+        padding: 20px;
+    }
+    
+    .admin-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn-secondary {
+        margin-left: 0;
+    }
+    
+    .admin-news-item {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
     </style>
 </head>
 <body>
@@ -899,7 +1296,7 @@
             <h2 class="section-title">Quiénes Somos</h2>
             <div class="presentation">
                 <div class="presentation-text">
-                    <h3><span class="highlight">Nuestra Compromiso</span></h3>
+                    <h3><span class="highlight">Nuestro Compromiso</span></h3>
                     <p>Somos una organización dedicada a la capacitación y formación profesional en emergencias, rescate y primeros auxilios. Nuestro objetivo es brindar herramientas y conocimientos esenciales para salvar vidas y mejorar la respuesta ante situaciones de emergencia.</p>
                     <p>Contamos con un equipo de instructores altamente capacitados y con experiencia en el campo de la salud y la seguridad. Ofrecemos una variedad de cursos y programas adaptados a las necesidades de diferentes públicos, desde la comunidad en general hasta profesionales del sector salud y seguridad.</p>
                     <p>Nuestra misión es promover una cultura de prevención y preparación, capacitando a individuos y organizaciones para que puedan actuar de manera efectiva en situaciones críticas. Creemos que la educación y la formación son clave para salvar vidas y construir comunidades más seguras.</p>
@@ -1024,7 +1421,7 @@
         </div>
     </section>
 
-    <!-- Equipo -->
+     <!-- Equipo -->
     <section id="equipo" class="section">
         <div class="container">
             <h2 class="section-title">Nuestro Equipo</h2>
@@ -1033,7 +1430,17 @@
                    <!-- Lugar para las fotos -->
                       <!--<div class="team-photo"><img src="img/Equipo/Carlos Lafuente.jpeg" alt="" style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px;"></div>-->
                     <h4>Lic. Manuel Díaz</h4>
-                    <p>Presidente y Director General</p>
+                    <p>Fundador y Presidente</p>
+                </div>
+                <div class="team-member">
+                    
+                    <h4>Lic. Lourdes Ribeiro</h4>
+                    <p>Vicepresidente</p>
+                </div>
+                <div class="team-member">
+                    
+                    <h4>Carlos Lapuente</h4>
+                    <p>Secretario</p>
                 </div>
                 <div class="team-member">
                     
@@ -1047,29 +1454,31 @@
                 </div>
                 <div class="team-member">
                     
-                    <h4>Camila Díaz Silva</h4>
-                    <p>Tesorera e Instructora</p>
-                </div>
-                <div class="team-member">
-                    
-                    <h4>Lic. Lourdes Ribeiro</h4>
-                    <p>Instructora Especializada</p>
-                </div>
-                <div class="team-member">
-                    
                     <h4>Enf. Andrea Núñez</h4>
-                    <p>Instructora de Emergencias</p>
+                    <p>Instructora</p>
                 </div>
                 <div class="team-member">
                     
-                    <h4>Enf. Flavia Ozuna</h4>
-                    <p>Especialista en RCP</p>  
+                    <h4>Flavia Ozuna</h4>
+                    <p>Instructora</p>
                 </div>
                 <div class="team-member">
                     
-                    <h4>Carlos Lapuente</h4>
-                    <p>Instructor</p>
+                    <h4>Hugo Quevedo</h4>
+                    <p>Instructora</p>
                 </div>
+                <div class="team-member">
+                    
+                    <h4>Marcelo Balaguer</h4>
+                    <p>Instructora</p>
+                </div>
+                 <div class="team-member">
+                    
+                    <h4>Camila Díaz Silva</h4>
+                    <p>Tesorera</p>
+                </div>
+                
+
             </div>
         </div>
     </section>
@@ -1184,6 +1593,86 @@
         </div>
     </div>
 </section>
+
+<!-- SECCIÓN DE NOVEDADES - Agregar esto dentro del body de tu index.html -->
+
+<!-- Sección pública de novedades -->
+<section id="novedades" class="news-section">
+    <div class="container">
+        <h2 class="section-title">Novedades</h2>
+        <div id="news-list" class="news-grid">
+            <!-- Las novedades se cargarán dinámicamente aquí -->
+        </div>
+        <div id="no-news" class="no-news-message" style="display: none;">
+            <p>No hay novedades disponibles en este momento.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Panel de administración (oculto por defecto) -->
+<div id="admin-panel" class="admin-panel" style="display: none;">
+    <div class="admin-container">
+        <div class="admin-header">
+            <h2>Panel de Administración de Novedades</h2>
+            <button id="logout-btn" class="btn-logout">Cerrar Sesión</button>
+        </div>
+        
+        <form id="news-form" class="news-form">
+            <div class="form-group">
+                <label for="news-title">Título de la Novedad</label>
+                <input type="text" id="news-title" name="title" required placeholder="Ingrese el título de la novedad">
+            </div>
+            
+            <div class="form-group">
+                <label for="news-content">Contenido</label>
+                <div class="editor-toolbar">
+                    <button type="button" id="add-image-btn" class="toolbar-btn">
+                        <span>📷</span> Insertar Imagen
+                    </button>
+                    <input type="file" id="image-upload" accept="image/*" style="display: none;" multiple>
+                </div>
+                <textarea id="news-content" name="content" rows="10" required placeholder="Escriba el contenido de la novedad. Use el botón de arriba para insertar imágenes."></textarea>
+            </div>
+            
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">Guardar Novedad</button>
+                <button type="button" id="cancel-btn" class="btn-secondary">Cancelar</button>
+            </div>
+        </form>
+        
+        <div class="existing-news">
+            <h3>Novedades Publicadas</h3>
+            <div id="admin-news-list" class="admin-news-list">
+                <!-- Lista de novedades para administrar -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de login -->
+<div id="login-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h2>Acceso de Administrador</h2>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="admin-password">Contraseña</label>
+                <input type="password" id="admin-password" placeholder="Ingrese la contraseña" required>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">Ingresar</button>
+                <button type="button" id="close-login" class="btn-secondary">Cancelar</button>
+            </div>
+            <div id="login-error" class="error-message" style="display: none;">
+                Contraseña incorrecta. Intente nuevamente.
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Botón flotante de administración (visible solo cuando no hay sesión activa) -->
+<button id="admin-access-btn" class="admin-float-btn" title="Acceso Administrador">
+    🔐
+</button>
 
     <!-- Contacto -->
     <section id="contacto" class="section section-alt">
@@ -1346,6 +1835,453 @@
         console.error("Error al copiar: ", err);
       });
     }
+
+    // ========================================
+// SISTEMA DE NOVEDADES CON ADMINISTRACIÓN
+// Agregar este código a tu archivo script.js
+// ========================================
+
+// Configuración
+const CONFIG = {
+    ADMIN_PASSWORD: 'admin123', // Cambia esta contraseña
+    STORAGE_KEY: 'newsData',
+    SESSION_KEY: 'adminSession',
+    MAX_IMAGE_SIZE: 5 * 1024 * 1024, // 5MB
+};
+
+// Estado de la aplicación
+let newsData = [];
+let isAdmin = false;
+let currentImageIndex = 0;
+
+// ========================================
+// INICIALIZACIÓN
+// ========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadNews();
+    checkAdminSession();
+    initializeEventListeners();
+    renderPublicNews();
+});
+
+// ========================================
+// GESTIÓN DE DATOS
+// ========================================
+
+function loadNews() {
+    const stored = localStorage.getItem(CONFIG.STORAGE_KEY);
+    if (stored) {
+        try {
+            newsData = JSON.parse(stored);
+        } catch (e) {
+            console.error('Error loading news:', e);
+            newsData = [];
+        }
+    }
+}
+
+function saveNews() {
+    localStorage.setItem(CONFIG.STORAGE_KEY, JSON.stringify(newsData));
+}
+
+function generateId() {
+    return Date.now().toString(36) + Math.random().toString(36).substr(2);
+}
+
+// ========================================
+// AUTENTICACIÓN
+// ========================================
+
+function checkAdminSession() {
+    const session = sessionStorage.getItem(CONFIG.SESSION_KEY);
+    if (session === 'active') {
+        isAdmin = true;
+        showAdminButton(false);
+    } else {
+        showAdminButton(true);
+    }
+}
+
+function login(password) {
+    if (password === CONFIG.ADMIN_PASSWORD) {
+        sessionStorage.setItem(CONFIG.SESSION_KEY, 'active');
+        isAdmin = true;
+        return true;
+    }
+    return false;
+}
+
+function logout() {
+    sessionStorage.removeItem(CONFIG.SESSION_KEY);
+    isAdmin = false;
+    hideAdminPanel();
+    showAdminButton(true);
+}
+
+function showAdminButton(show) {
+    const btn = document.getElementById('admin-access-btn');
+    if (btn) {
+        btn.style.display = show ? 'block' : 'none';
+    }
+}
+
+// ========================================
+// RENDERIZADO DE NOVEDADES PÚBLICAS
+// ========================================
+
+function renderPublicNews() {
+    const newsList = document.getElementById('news-list');
+    const noNews = document.getElementById('no-news');
+    
+    if (!newsList || !noNews) return;
+    
+    newsList.innerHTML = '';
+    
+    if (newsData.length === 0) {
+        newsList.style.display = 'none';
+        noNews.style.display = 'block';
+        return;
+    }
+    
+    newsList.style.display = 'grid';
+    noNews.style.display = 'none';
+    
+    // Ordenar por fecha más reciente
+    const sortedNews = [...newsData].sort((a, b) => b.date - a.date);
+    
+    sortedNews.forEach(item => {
+        const newsElement = createNewsElement(item);
+        newsList.appendChild(newsElement);
+    });
+}
+
+function createNewsElement(newsItem) {
+    const article = document.createElement('article');
+    article.className = 'news-item';
+    
+    const date = new Date(newsItem.date);
+    const formattedDate = formatDate(date);
+    
+    article.innerHTML = `
+        <div class="news-item-header">
+            <h3>${escapeHtml(newsItem.title)}</h3>
+            <div class="news-date">
+                📅 ${formattedDate}
+            </div>
+        </div>
+        <div class="news-content">
+            ${processContent(newsItem.content)}
+        </div>
+    `;
+    
+    return article;
+}
+
+function processContent(content) {
+    // Procesar el contenido para mostrar imágenes
+    let processed = escapeHtml(content);
+    
+    // Reemplazar marcadores de imagen con etiquetas img
+    processed = processed.replace(/\[IMG:([^\]]+)\]/g, (match, imgData) => {
+        return `<img src="${imgData}" alt="Imagen de novedad" />`;
+    });
+    
+    // Convertir saltos de línea en párrafos
+    const paragraphs = processed.split('\n\n').filter(p => p.trim());
+    return paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
+}
+
+function formatDate(date) {
+    const options = { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+    };
+    return date.toLocaleDateString('es-ES', options);
+}
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+// ========================================
+// PANEL DE ADMINISTRACIÓN
+// ========================================
+
+function showAdminPanel() {
+    const panel = document.getElementById('admin-panel');
+    if (panel) {
+        panel.style.display = 'block';
+        renderAdminNewsList();
+        resetForm();
+    }
+}
+
+function hideAdminPanel() {
+    const panel = document.getElementById('admin-panel');
+    if (panel) {
+        panel.style.display = 'none';
+    }
+}
+
+function renderAdminNewsList() {
+    const list = document.getElementById('admin-news-list');
+    if (!list) return;
+    
+    list.innerHTML = '';
+    
+    if (newsData.length === 0) {
+        list.innerHTML = '<p style="color: #666666;">No hay novedades publicadas.</p>';
+        return;
+    }
+    
+    const sortedNews = [...newsData].sort((a, b) => b.date - a.date);
+    
+    sortedNews.forEach(item => {
+        const element = createAdminNewsElement(item);
+        list.appendChild(element);
+    });
+}
+
+function createAdminNewsElement(newsItem) {
+    const div = document.createElement('div');
+    div.className = 'admin-news-item';
+    
+    const date = new Date(newsItem.date);
+    const formattedDate = formatDate(date);
+    
+    div.innerHTML = `
+        <div class="admin-news-info">
+            <h4>${escapeHtml(newsItem.title)}</h4>
+            <span>Publicado: ${formattedDate}</span>
+        </div>
+        <button class="btn-delete" data-id="${newsItem.id}">Eliminar</button>
+    `;
+    
+    // Agregar evento al botón eliminar
+    const deleteBtn = div.querySelector('.btn-delete');
+    deleteBtn.addEventListener('click', function() {
+        if (confirm('¿Está seguro de eliminar esta novedad?')) {
+            deleteNews(newsItem.id);
+        }
+    });
+    
+    return div;
+}
+
+function deleteNews(id) {
+    newsData = newsData.filter(item => item.id !== id);
+    saveNews();
+    renderPublicNews();
+    renderAdminNewsList();
+}
+
+// ========================================
+// MANEJO DE FORMULARIO
+// ========================================
+
+function submitNews(title, content) {
+    const newsItem = {
+        id: generateId(),
+        title: title,
+        content: content,
+        date: Date.now()
+    };
+    
+    newsData.push(newsItem);
+    saveNews();
+    renderPublicNews();
+    renderAdminNewsList();
+    resetForm();
+    
+    alert('Novedad publicada exitosamente');
+}
+
+function resetForm() {
+    const form = document.getElementById('news-form');
+    if (form) {
+        form.reset();
+    }
+}
+
+function insertImageAtCursor(imageData) {
+    const textarea = document.getElementById('news-content');
+    if (!textarea) return;
+    
+    const imageTag = `[IMG:${imageData}]`;
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const text = textarea.value;
+    
+    const before = text.substring(0, start);
+    const after = text.substring(end);
+    
+    textarea.value = before + '\n' + imageTag + '\n' + after;
+    textarea.focus();
+    textarea.setSelectionRange(start + imageTag.length + 2, start + imageTag.length + 2);
+}
+
+// ========================================
+// MANEJO DE IMÁGENES
+// ========================================
+
+function handleImageUpload(file) {
+    if (!file.type.startsWith('image/')) {
+        alert('Por favor, seleccione un archivo de imagen válido.');
+        return;
+    }
+    
+    if (file.size > CONFIG.MAX_IMAGE_SIZE) {
+        alert('La imagen es demasiado grande. Máximo 5MB.');
+        return;
+    }
+    
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        insertImageAtCursor(e.target.result);
+    };
+    reader.readAsDataURL(file);
+}
+
+// ========================================
+// EVENT LISTENERS
+// ========================================
+
+function initializeEventListeners() {
+    // Botón de acceso admin
+    const adminBtn = document.getElementById('admin-access-btn');
+    if (adminBtn) {
+        adminBtn.addEventListener('click', function() {
+            document.getElementById('login-modal').style.display = 'flex';
+        });
+    }
+    
+    // Formulario de login
+    const loginForm = document.getElementById('login-form');
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const password = document.getElementById('admin-password').value;
+            
+            if (login(password)) {
+                document.getElementById('login-modal').style.display = 'none';
+                showAdminPanel();
+                showAdminButton(false);
+                loginForm.reset();
+                document.getElementById('login-error').style.display = 'none';
+            } else {
+                document.getElementById('login-error').style.display = 'block';
+            }
+        });
+    }
+    
+    // Cerrar modal de login
+    const closeLogin = document.getElementById('close-login');
+    if (closeLogin) {
+        closeLogin.addEventListener('click', function() {
+            document.getElementById('login-modal').style.display = 'none';
+            document.getElementById('login-form').reset();
+            document.getElementById('login-error').style.display = 'none';
+        });
+    }
+    
+    // Botón de logout
+    const logoutBtn = document.getElementById('logout-btn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', logout);
+    }
+    
+    // Formulario de novedades
+    const newsForm = document.getElementById('news-form');
+    if (newsForm) {
+        newsForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('news-title').value;
+            const content = document.getElementById('news-content').value;
+            
+            if (title && content) {
+                submitNews(title, content);
+            }
+        });
+    }
+    
+    // Botón cancelar
+    const cancelBtn = document.getElementById('cancel-btn');
+    if (cancelBtn) {
+        cancelBtn.addEventListener('click', resetForm);
+    }
+    
+    // Botón insertar imagen
+    const addImageBtn = document.getElementById('add-image-btn');
+    const imageUpload = document.getElementById('image-upload');
+    
+    if (addImageBtn && imageUpload) {
+        addImageBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            imageUpload.click();
+        });
+        
+        imageUpload.addEventListener('change', function(e) {
+            const files = e.target.files;
+            if (files.length > 0) {
+                for (let file of files) {
+                    handleImageUpload(file);
+                }
+            }
+            // Limpiar el input para permitir subir la misma imagen otra vez
+            e.target.value = '';
+        });
+    }
+    
+    // Cerrar panel admin al hacer clic fuera
+    const adminPanel = document.getElementById('admin-panel');
+    if (adminPanel) {
+        adminPanel.addEventListener('click', function(e) {
+            if (e.target === adminPanel) {
+                if (confirm('¿Desea cerrar el panel de administración?')) {
+                    hideAdminPanel();
+                }
+            }
+        });
+    }
+}
+
+// ========================================
+// UTILIDADES ADICIONALES
+// ========================================
+
+// Función para exportar novedades (opcional)
+function exportNews() {
+    const dataStr = JSON.stringify(newsData, null, 2);
+    const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+    
+    const exportFileDefaultName = `novedades_${new Date().toISOString().split('T')[0]}.json`;
+    
+    const linkElement = document.createElement('a');
+    linkElement.setAttribute('href', dataUri);
+    linkElement.setAttribute('download', exportFileDefaultName);
+    linkElement.click();
+}
+
+// Función para importar novedades (opcional)
+function importNews(jsonData) {
+    try {
+        const imported = JSON.parse(jsonData);
+        if (Array.isArray(imported)) {
+            newsData = [...newsData, ...imported];
+            saveNews();
+            renderPublicNews();
+            renderAdminNewsList();
+            alert('Novedades importadas exitosamente');
+        }
+    } catch (e) {
+        alert('Error al importar novedades. Verifique el formato del archivo.');
+    }
+}
   
 </script>
 </body>
