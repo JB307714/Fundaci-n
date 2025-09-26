@@ -22,6 +22,7 @@
             --white: #FFFFFF;
             --text-dark: #333333;
             --text-light: #666666;
+            --green: #038F03;
         }
 
         /* Reset y configuración base */
@@ -259,6 +260,24 @@
             font-weight: 600;
             color: var(--primary-blue);
         }
+        .Subrayar {
+            background: linear-gradient(120deg, var(--accent-red) 0%, var(--accent-red) 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.2em;
+            background-position: 0 88%;
+            padding: 0 4px;
+            font-weight: 600;
+            color: var(--white);
+        }
+        .Subrayar-Naemt {
+            background: linear-gradient(120deg, var(--green) 0%, var(--green) 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.2em;
+            background-position: 0 88%;
+            padding: 0 4px;
+            font-weight: 600;
+            color: var(--white);
+        }
 
         /* Objetivos */
         .objectives {
@@ -476,36 +495,59 @@
             transform: translateY(-2px);
         }
 
-        /* Footer */
-        .footer {
-            background: var(--primary-blue);
-            color: var(--white);
-            padding: 3rem 0 1rem;
-        }
+        /* ===== FOOTER ===== */
+.footer {
+    background: var(--primary-blue);
+    color: #fff;
+    padding: 40px 20px 20px;
+    margin-top: 40px;
+}
 
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    align-items: start;
+    text-align: left;
+}
 
-        .footer-section h4 {
-            margin-bottom: 1rem;
-            color: var(--white);
-        }
+.footer-section h4 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: var(--accent-red);
+}
 
-        .footer-section a {
-            color: var(--white);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
-            transition: color 0.3s ease;
-        }
+.footer-section p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
 
-        .footer-section a:hover {
-            color: var(--accent-red);
-        }
+.footer-logo {
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 1.5rem;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: var(--accent-red);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.3);
+    margin-top: 30px;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
 
         .social-links {
             display: flex;
@@ -1273,12 +1315,10 @@
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#historia">Nuestra Historia</a></li>
-                <li><a href="#objetivos">Objetivos</a></li>
                 <li><a href="#programas">Programas</a></li>
+                <li><a href="#Logros">Reconocimientos Internacionales</a></li>
                 <li><a href="#equipo">Equipo</a></li>
-                <li><a href="#video">Videos</a></li>
-                <li><a href="#redes">Redes</a></li>
-                <li><a href="#Galeria">Galeria</a></li>
+                <li><a href="#Novedades">Novedades</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
             
@@ -1433,6 +1473,36 @@
         </div>
     </section>
 
+     <section id="Logros" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Reconocimientos Internacionales</h2>
+            <div class="programs">
+                <div class="program">
+                    <div class="program-header">
+                        <h3><i class="fas fa-award"></i> Programa <span class="Subrayar">Stop The Bleed</span></h3>
+                        <p>En 2021 obtuvimos la certificacion como centro de entrenamiento.</p>
+                    </div>
+                    <div class="program-content">
+                        <img src="img/Stop the bleed.png" alt="Imagen sin fondo de Stop the bleed" style="width: 100%; height: 200px; object-fit: contain; border-radius: 10px;">
+                        <img src="img/stb-dod-logo-high-res-1 copia.tiff" alt="Imagen sin fondo de Stop the bleed" style="width: 100%; height: 200px; object-fit: contain; border-radius: 10px;">
+                    </div>
+                </div>
+
+                <div class="program">
+                    <div class="program-header">
+                        <h3><i class="fas fa-award"></i> Programa <span class="Subrayar-Naemt">First On The Scene</span></h3>
+                        <p>En 2025 obtuvimos la certificacion para enseñanza del programa.</p>
+                    </div>
+                    <div class="program-content">
+                        <img src="img/first-on-the-scene-logo.png" alt="Imagen sin fondo de NAEMT" style="width: 100%; height: 200px; object-fit: contain; border-radius: 10px;">
+                        <img src="img/Naemt footer.jpg" alt="Imagen sin fondo de NAEMT" style="width: 100%; height: 200px; object-fit: contain; border-radius: 10px;">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
      <!-- Equipo -->
     <section id="equipo" class="section">
         <div class="container">
@@ -1486,7 +1556,7 @@
                 </div>
                 <div class="team-member">
                     
-                    <h4>Marcelo Balaguer</h4>
+                    <h4>Marcelo Valadere</h4>
                     <p>Instructora</p>
                 </div>
                  
@@ -1504,10 +1574,7 @@
                 <p>Descubre cómo la Fundación Socorristas A.P.S Internacional está formando profesionales en emergencias y salvando vidas a través de la capacitación especializada.</p>
                 <div class="video-wrapper">
                     <!-- CAMBIA ESTE ENLACE por tu video de YouTube -->
-                    <iframe src="https://www.youtube.com/embed/9uFqJ71tULI" 
-                            title="Video Fundación Socorristas" 
-                            allowfullscreen>
-                    </iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/IuH18aovJYg?si=nOFq5rl0fAJcbhQJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -1607,20 +1674,40 @@
     </div>
 </section>
 
+<section id="Novedades" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Novedades</h2>
+            <div class="programs">
+                <div class="program">
+                    <div class="program-header">
+                        <h3><i class="far fa-newspaper"></i> Sera Utilizado para la compra de insumos.</h3>
+                        
+                    </div>
+                    <div class="program-content" style="display: flex; justify-content: center; align-items: center; padding: 15px;">
+                    <img src="img/Rifabenefica.jpeg" 
+                    alt="imagen de rifa" 
+                    style="max-width: 80%; max-height: 500px; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: transform 0.3s ease;">
+</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 <!-- SECCIÓN DE NOVEDADES - Agregar esto dentro del body de tu index.html -->
 
 <!-- Sección pública de novedades -->
-<section id="novedades" class="news-section">
+<!--<section id="novedades" class="news-section">
     <div class="container">
         <h2 class="section-title">Novedades</h2>
         <div id="news-list" class="news-grid">
-            <!-- Las novedades se cargarán dinámicamente aquí -->
+            Las novedades se cargarán dinámicamente aquí 
+             
         </div>
         <div id="no-news" class="no-news-message" style="display: none;">
             <p>No hay novedades disponibles en este momento.</p>
         </div>
     </div>
-</section>
+</section>-->
 
 <!-- Panel de administración (oculto por defecto) -->
 <div id="admin-panel" class="admin-panel" style="display: none;">
@@ -1749,6 +1836,41 @@
             
         </div>
     </section>
+
+    <!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <div class="container footer-container">
+        <!-- Logo y descripción -->
+        <div class="footer-section">
+            <img src="img/LOGO FUNDACION INTERNACIONAL.png" alt="Logo Fundación" class="footer-logo">
+            <p>
+                Fundación Socorristas A.P.S Internacional – Uruguay.<br>
+                Capacitación y formación profesional en emergencias, rescate y primeros auxilios.
+            </p>
+        </div>
+
+        <!-- Contacto -->
+        <div class="footer-section">
+            <h4>Contacto</h4>
+            <p><i class="fas fa-phone"></i> +598 97 135 908</p>
+            <p><i class="fas fa-envelope"></i> contacto@fundacionapssocorristas.org</p>
+        </div>
+
+        <!-- Redes sociales -->
+        <div class="footer-section">
+            <h4>Seguinos</h4>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/apsocorristas?locale=es_LA" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/fundacion.socorristas_a.p.s.uy" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@FundaciónsocorristasAPSInterna" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Fundación Socorristas A.P.S Internacional. Todos los derechos reservados.</p>
+    </div>
+</footer>
     
 
     <script>
@@ -1848,6 +1970,7 @@
         console.error("Error al copiar: ", err);
       });
     }
+
 
     // ========================================
 // SISTEMA DE NOVEDADES CON ADMINISTRACIÓN
